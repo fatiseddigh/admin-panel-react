@@ -1,7 +1,7 @@
 import Home from "./pages/home/Home";
 
 // import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Users from "./pages/users/Users";
 import Products from "./pages/products/Products";
 import Navbar from "./components/navbar/Navbar";
@@ -16,7 +16,9 @@ function App() {
           <div className="menuContainer">
             <Menu />
           </div>
-          <div className="contentContainer"></div>
+          <div className="contentContainer">
+            <Outlet />
+          </div>
         </div>
         <Footer />
       </div>
@@ -26,15 +28,12 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Home />,
-    },
-    {
-      path: "users",
-      element: <Users />,
-    },
-    {
-      path: "products",
-      element: <Products />,
+      element: <Layout />,
+      children: [
+        { path: "/", element: <Home /> },
+        { path: "/users", element: <Users /> },
+        { path: "/products", element: <Products /> },
+      ],
     },
   ]);
   return <RouterProvider router={router} />;
