@@ -61,7 +61,7 @@ function Users() {
         <button onClick={() => setOpen(true)}>Add new User </button>
       </div>
       <DataTable slug="users" rows={userRows} columns={columns} />
-      {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
+      {/* {open && <Add slug="user" columns={columns} setOpen={setOpen} />} */}
     </div>
   );
 }

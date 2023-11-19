@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/responsive.scss";
 .menu {
   .item {
     display: flex;
@@ -7,6 +8,9 @@
     margin-bottom: 15px;
     .title {
       color: $light-color;
+      @include lg {
+        display: none;
+      }
     }
     .listItem {
       display: flex;
@@ -18,6 +22,11 @@
         color: $second-dark-color;
         transition: all 0.6s ease-out;
         background-color: $soft-bg;
+      }
+      .listItemTitle {
+        @include lg {
+          display: none;
+        }
       }
     }
   }

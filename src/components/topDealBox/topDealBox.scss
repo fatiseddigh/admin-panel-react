@@ -1,6 +1,11 @@
+@import "../../styles/responsive.scss";
+
 .topBox {
   h1 {
     margin-bottom: 20px;
+    @include xl {
+      font-size: 24px;
+    }
   }
   .list {
     .listItem {
